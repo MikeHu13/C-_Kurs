@@ -3,10 +3,9 @@
 int main()
 {
     int rounds;
-    std::cout << "Gib die Anzahl der Runden ein ";
-    std::cin >> rounds;
+    bool you_won = false;
 
-    for (int i = 0; i < rounds; i++)
+    do
     {
         int input;
         std::cout << "Gib eine Zahl zwischen 0 und 10 ein: ";
@@ -17,6 +16,7 @@ int main()
             if (input == 4)
             {
                 std::cout << "Du hast gewonnen" << std::endl;
+                you_won = true;
             }
             else if (input % 2 == 0)
             {
@@ -31,7 +31,7 @@ int main()
         {
             std::cout << "FALSE";
         }
-    }
+    } while (you_won == false);
 
 
     return 0;
