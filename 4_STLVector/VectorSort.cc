@@ -13,10 +13,17 @@ void print_double_vector(std::vector<double> &vec)
     }
 }
 
-bool my_sorting(const double &i, const double &j)
+bool my_descending(const double &i, const double &j)
 {
     return i > j;
 }
+
+bool my_ascending(const double &i, const double &j)
+{
+    return i < j;
+}
+
+
 
 int main()
 {
@@ -25,8 +32,16 @@ int main()
     std::iota(my_vector.begin(), my_vector.end(), 3.0);
     print_double_vector(my_vector);
 
-    std::sort(my_vector.begin(), my_vector.end(), my_sorting);
+    std::sort(my_vector.begin(), my_vector.end() - 2, my_descending);
     print_double_vector(my_vector);
+
+    std::sort(my_vector.begin(), my_vector.end() - 2, my_ascending);
+    print_double_vector(my_vector);
+
+    //ascening is default
+    std::sort(my_vector.begin(), my_vector.end() - 2, my_ascending);
+    print_double_vector(my_vector);
+
 
     return 0;
 }
